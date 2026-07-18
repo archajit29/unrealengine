@@ -1,0 +1,82 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND VIDEO */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* MAIN CONTENT */
+.content {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 590px;
+  padding-top: 180px;
+      
+}
+
+/* DARK OVERLAY */
+.content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* LOGIN BOX */
+.auth-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  padding: 40px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: 300px;
+  color: white;
+  text-align: center;
+}
+
+/* INPUTS */
+.auth-box input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* BUTTONS */
+.auth-box button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #ff4c4c;
+  color: white;
+  font-weight: bold;
+}
+
+.auth-box .secondary {
+  background: transparent;
+  border: 1px solid white;
+}
