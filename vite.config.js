@@ -5,9 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: true, // 👈 Change this to 'true' for a permanent fix
+    allowedHosts: true, //  Change this to 'true' for a permanent fix
     host: true,         // Allows the tunnel to see the local server
-    port: 5173          // Explicitly set the port to match your tunnel
-  }
+    port: 5173,          // Explicitly set the port to match your tunnel
+    
+  },
+  base: '/unrealengine/',
 })
 
