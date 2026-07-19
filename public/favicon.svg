@@ -1,16 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a8fc2"/>
-      <stop offset="100%" stop-color="#17c4a0"/>
-    </linearGradient>
-  </defs>
+  <!-- Rounded rect outline only (no fill) so background stays transparent -->
+  <rect x="8" y="8" width="496" height="496" rx="60" ry="60" fill="none" stroke="#17c4a0" stroke-width="16"/>
 
-  <!-- Outer rounded rect background -->
-  <rect x="8" y="8" width="496" height="496" rx="60" ry="60" fill="url(#bg)"/>
-
-  <!-- Inner white rounded border -->
-  <rect x="42" y="88" width="428" height="336" rx="34" ry="34" fill="none" stroke="#ffffff" stroke-width="16"/>
+  <!-- Inner rounded border -->
+  <rect x="42" y="88" width="428" height="336" rx="34" ry="34" fill="none" stroke="#17c4a0" stroke-width="16"/>
 
   <!-- Play triangle shadow -->
   <path d="M228 150 L400 246 C412 253 412 269 400 276 L228 372 C214 380 200 372 200 356 L200 166 C200 150 214 142 228 150 Z"
