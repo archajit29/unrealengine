@@ -10,6 +10,6 @@ export default defineConfig({
     port: 5173,          // Explicitly set the port to match your tunnel
     
   },
-  base: '/unrealengine/',
+  base: '/',
 })
 
