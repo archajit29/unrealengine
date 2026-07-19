@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384" width="512" height="384">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="384" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0889C1"/>
-      <stop offset="100%" stop-color="#0DCDB3"/>
+      <stop offset="0%" stop-color="#FF7A00"/>
+      <stop offset="100%" stop-color="#FFC400"/>
     </linearGradient>
     <mask id="ringHoleMask">
       <rect x="0" y="0" width="512" height="384" rx="64" fill="#fff"/>
@@ -11,61 +11,22 @@
     <clipPath id="canvasClip">
       <rect x="0" y="0" width="512" height="384" rx="64"/>
     </clipPath>
-    <filter id="blurLarge" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="30"/>
-    </filter>
-    <filter id="blurMed" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="16"/>
-    </filter>
-    <filter id="blurSoft" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="8"/>
-    </filter>
-    <filter id="blurTiny" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="3"/>
-    </filter>
   </defs>
-
   <g clip-path="url(#canvasClip)">
-    <!-- extra layered glow blobs behind everything, using the same palette, for added depth -->
-    <ellipse cx="50" cy="30" rx="140" ry="100" fill="#0DCDB3" opacity="0.35" filter="url(#blurLarge)"/>
-    <ellipse cx="470" cy="20" rx="120" ry="90" fill="#0889C1" opacity="0.35" filter="url(#blurLarge)"/>
-    <ellipse cx="490" cy="360" rx="150" ry="110" fill="#60A5FA" opacity="0.3" filter="url(#blurLarge)"/>
-    <ellipse cx="20" cy="360" rx="130" ry="95" fill="#0DCDB3" opacity="0.3" filter="url(#blurLarge)"/>
-
-    <!-- brighter glow concentrated in the ring gap itself -->
-    <g mask="url(#ringHoleMask)">
-      <ellipse cx="256" cy="192" rx="250" ry="180" fill="#60A5FA" opacity="0.4" filter="url(#blurMed)"/>
-      <ellipse cx="130" cy="70" rx="80" ry="55" fill="#FFFFFF" opacity="0.25" filter="url(#blurMed)"/>
-      <ellipse cx="400" cy="310" rx="90" ry="60" fill="#0DCDB3" opacity="0.3" filter="url(#blurMed)"/>
-    </g>
-
     <!-- outer band (0-32 inset), gradient, with the ring hole punched out -->
     <rect x="0" y="0" width="512" height="384" rx="64" fill="url(#bgGrad)" mask="url(#ringHoleMask)"/>
-
+    <!-- black outline tracing the outer rounded rect -->
+    <rect x="4" y="4" width="504" height="376" rx="60" fill="none" stroke="#0F172A" stroke-width="8"/>
     <!-- inner screen (fills from 48 inset inward) -->
     <rect x="48" y="48" width="416" height="288" rx="16" fill="url(#bgGrad)"/>
-
-    <!-- fine sparkle dots for texture -->
-    <g opacity="0.45" filter="url(#blurTiny)">
-      <circle cx="90" cy="300" r="2.6" fill="#FFFFFF"/>
-      <circle cx="120" cy="70" r="2.2" fill="#FFFFFF"/>
-      <circle cx="430" cy="90" r="2.4" fill="#FFFFFF"/>
-      <circle cx="410" cy="300" r="2" fill="#FFFFFF"/>
-    </g>
-
-    <!-- thin blue borders tracing both edges of the transparent ring -->
-    <rect x="32" y="32" width="448" height="320" rx="32" fill="none" stroke="#60A5FA" stroke-width="5"/>
-    <rect x="48" y="48" width="416" height="288" rx="16" fill="none" stroke="#60A5FA" stroke-width="5"/>
-
-    <!-- soft ambient glow behind the play button -->
-    <ellipse cx="300" cy="178" rx="140" ry="120" fill="#60A5FA" opacity="0.3" filter="url(#blurMed)"/>
-
-    <!-- shadow (offset triangle), now softly blurred for depth -->
+    <!-- black borders tracing both edges of the ring -->
+    <rect x="32" y="32" width="448" height="320" rx="32" fill="none" stroke="#0F172A" stroke-width="10"/>
+    <rect x="48" y="48" width="416" height="288" rx="16" fill="none" stroke="#0F172A" stroke-width="8"/>
+    <!-- shadow (offset triangle) behind the play button -->
     <path transform="translate(16,16)" d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z"
-          fill="#000000" filter="url(#blurSoft)"/>
-
+          fill="#0F172A"/>
     <!-- play triangle -->
     <path d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z"
-          fill="#60A5FA" stroke="#0F172A" stroke-width="8" stroke-linejoin="round"/>
+          fill="#4A9BF0" stroke="#0F172A" stroke-width="10" stroke-linejoin="round"/>
   </g>
 </svg>
