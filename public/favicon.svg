@@ -1,16 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Rounded rect outline only (no fill) so background stays transparent -->
-  <rect x="8" y="8" width="496" height="496" rx="60" ry="60" fill="none" stroke="#17c4a0" stroke-width="16"/>
-
-  <!-- Inner rounded border -->
-  <rect x="42" y="88" width="428" height="336" rx="34" ry="34" fill="none" stroke="#17c4a0" stroke-width="16"/>
-
-  <!-- Play triangle shadow -->
-  <path d="M228 150 L400 246 C412 253 412 269 400 276 L228 372 C214 380 200 372 200 356 L200 166 C200 150 214 142 228 150 Z"
-        fill="#000000"/>
-
-  <!-- Play triangle -->
-  <path d="M218 140 L390 236 C402 243 402 259 390 266 L218 362 C204 370 190 362 190 346 L190 156 C190 140 204 132 218 140 Z"
-        fill="#5b9bf7" stroke="#0d1b3e" stroke-width="10" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384" width="512" height="384">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="384" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0889C1"/>
+      <stop offset="100%" stop-color="#0DCDB3"/>
+    </linearGradient>
+    <mask id="ringHoleMask">
+      <rect x="0" y="0" width="512" height="384" rx="64" fill="#fff"/>
+      <rect x="32" y="32" width="448" height="320" rx="32" fill="#000"/>
+    </mask>
+  </defs>
+ 
+  <!-- outer band (0-32 inset), gradient, with the ring hole punched out -->
+  <rect x="0" y="0" width="512" height="384" rx="64" fill="url(#bgGrad)" mask="url(#ringHoleMask)"/>
+ 
+  <!-- inner screen (fills from 48 inset inward) -->
+  <rect x="48" y="48" width="416" height="288" rx="16" fill="url(#bgGrad)"/>
+ 
+  <!-- thin blue borders tracing both edges of the transparent ring -->
+  <rect x="32" y="32" width="448" height="320" rx="32" fill="none" stroke="#60A5FA" stroke-width="5"/>
+  <rect x="48" y="48" width="416" height="288" rx="16" fill="none" stroke="#60A5FA" stroke-width="5"/>
+ 
+  <!-- shadow (offset triangle) -->
+  <path transform="translate(16,16)" d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z" fill="#000000"/>
+ 
+  <!-- play triangle -->
+  <path d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z" fill="#60A5FA" stroke="#0F172A" stroke-width="8" stroke-linejoin="round"/>
 </svg>
-   
+ 
