@@ -1,32 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384" width="512" height="384">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="384" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FF7A00"/>
-      <stop offset="100%" stop-color="#FFC400"/>
+      <stop offset="0%" stop-color="#0889C1"/>
+      <stop offset="100%" stop-color="#0DCDB3"/>
     </linearGradient>
     <mask id="ringHoleMask">
       <rect x="0" y="0" width="512" height="384" rx="64" fill="#fff"/>
       <rect x="32" y="32" width="448" height="320" rx="32" fill="#000"/>
     </mask>
-    <clipPath id="canvasClip">
-      <rect x="0" y="0" width="512" height="384" rx="64"/>
-    </clipPath>
   </defs>
-  <g clip-path="url(#canvasClip)">
-    <!-- outer band (0-32 inset), gradient, with the ring hole punched out -->
-    <rect x="0" y="0" width="512" height="384" rx="64" fill="url(#bgGrad)" mask="url(#ringHoleMask)"/>
-    <!-- black outline tracing the outer rounded rect -->
-    <rect x="4" y="4" width="504" height="376" rx="60" fill="none" stroke="#0F172A" stroke-width="8"/>
-    <!-- inner screen (fills from 48 inset inward) -->
-    <rect x="48" y="48" width="416" height="288" rx="16" fill="url(#bgGrad)"/>
-    <!-- black borders tracing both edges of the ring -->
-    <rect x="32" y="32" width="448" height="320" rx="32" fill="none" stroke="#0F172A" stroke-width="10"/>
-    <rect x="48" y="48" width="416" height="288" rx="16" fill="none" stroke="#0F172A" stroke-width="8"/>
-    <!-- shadow (offset triangle) behind the play button -->
-    <path transform="translate(16,16)" d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z"
-          fill="#0F172A"/>
-    <!-- play triangle -->
-    <path d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z"
-          fill="#4A9BF0" stroke="#0F172A" stroke-width="10" stroke-linejoin="round"/>
-  </g>
-</svg>
+ 
+  <!-- outer band (0-32 inset), gradient, with the ring hole punched out -->
+  <rect x="0" y="0" width="512" height="384" rx="64" fill="url(#bgGrad)" mask="url(#ringHoleMask)"/>
+ 
+  <!-- inner screen (fills from 48 inset inward) -->
+  <rect x="48" y="48" width="416" height="288" rx="16" fill="url(#bgGrad)"/>
+ 
+  <!-- thin blue borders tracing both edges of the transparent ring -->
+  <rect x="32" y="32" width="448" height="320" rx="32" fill="none" stroke="#60A5FA" stroke-width="5"/>
+  <rect x="48" y="48" width="416" height="288" rx="16" fill="none" stroke="#60A5FA" stroke-width="5"/>
+ 
+  <!-- shadow (offset triangle) -->
+  <path transform="translate(16,16)" d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z" fill="#000000"/>
+ 
+  <!-- play triangle -->
+  <path d="M210,101 L210,256 Q210,276 227.6,266.6 L375.4,187.4 Q393,178 375.3,168.6 L227.7,90.4 Q210,81 210,101 Z" fill="#60A5FA" stroke="#0F172A" stroke-width="8" stroke-linejoin="round"/>
+</svg>  
+ 
